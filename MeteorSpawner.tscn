@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/MeteorSpawner.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/MeteorDirectionLine.gd" type="Script" id=2]
+
+[node name="MeteorSpawner" type="Node2D"]
+position = Vector2( -62, -60 )
+script = ExtResource( 1 )
+angle = 149.61
+speed = 80.519
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PoolVector2Array( 0, 0, -69.4558, 40.7332 )
+width = 1.0
+script = ExtResource( 2 )

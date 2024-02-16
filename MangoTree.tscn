@@ -1,0 +1,59 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://SizeableOak.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Trees/Africa tree.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform float speed = 1.7;
+uniform float amplitude = 0.008;
+uniform float aspect_ratio = 1;
+uniform vec2 offset_scale = vec2(1, 1);
+uniform float hit = 0.0;
+uniform float height = 40.0;
+
+
+void vertex() {
+	VERTEX.x += (sin(TIME * speed) + (hit * 0.5)) * amplitude * (VERTEX.y - height);
+	
+}
+/*void fragment() {
+	
+	vec2 wave_uv_offset;
+	wave_uv_offset.x = UV.x + 1.0;
+	wave_uv_offset.y = UV.y;
+	COLOR = vec4(wave_uv_offset, 0.0, 1.0);
+	//COLOR = texture(TEXTURE, wave_uv_offset);
+}*/"
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/speed = 1.0
+shader_param/amplitude = 0.008
+shader_param/aspect_ratio = 1.0
+shader_param/offset_scale = Vector2( 1, 1 )
+shader_param/hit = 0.0
+shader_param/height = 20.0
+
+[node name="MangoTree" instance=ExtResource( 1 )]
+seedName = "Mango"
+hitsForSeed = 2
+
+[node name="Sprite" parent="." index="0"]
+material = SubResource( 2 )
+position = Vector2( -1, -15 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D4" parent="Area2D" index="0"]
+polygon = PoolVector2Array( 6.1, 1.4, 8.1, 11.4, -0.9, 11.4, 0.0999999, 0.400002, -7.9, -4.6, 2.1, -9.6, 12.1, -4.6 )
+
+[node name="Position2D" parent="." index="3"]
+position = Vector2( -15, -15 )
+
+[node name="Position2D2" parent="." index="4"]
+position = Vector2( 13, -15 )
+
+[node name="CollisionPolygon2D5" parent="." index="5"]
+visible = false
+disabled = true

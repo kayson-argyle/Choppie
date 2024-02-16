@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Npc.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Characters/Npc/ArcherJack.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/ArcherJack.gd" type="Script" id=3]
+
+
+
+[node name="ArcherJack" instance=ExtResource( 1 )]
+texture = ExtResource( 2 )
+frame = 2
+script = ExtResource( 3 )
+
+[node name="Expressions" parent="." index="1"]
+position = Vector2( 0, -11 )

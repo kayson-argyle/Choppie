@@ -1,0 +1,114 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Environment/Nature/MedRock.png" type="Texture" id=1]
+
+[sub_resource type="Gradient" id=1]
+offsets = PoolRealArray( 0.656716, 0.885572, 1 )
+colors = PoolColorArray( 0, 0.82109, 1, 1, 1, 1, 1, 0.85098, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=2]
+gradient = SubResource( 1 )
+
+[sub_resource type="ParticlesMaterial" id=3]
+lifetime_randomness = 0.27
+emission_shape = 2
+emission_box_extents = Vector3( 5, 1, 1 )
+flag_disable_z = true
+direction = Vector3( -1, -0.2, 0 )
+spread = 0.0
+gravity = Vector3( 0, 90, 0 )
+initial_velocity = 50.0
+angular_velocity = 100.0
+angular_velocity_random = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+tangential_accel = -6.67
+damping = 62.5
+angle = 20.0
+angle_random = 1.0
+scale = 2.0
+scale_random = 1.0
+color_ramp = SubResource( 2 )
+hue_variation = 0.01
+hue_variation_random = 1.0
+
+[sub_resource type="Gradient" id=4]
+offsets = PoolRealArray( 0.791045, 1 )
+colors = PoolColorArray( 0, 0.82109, 1, 1, 0, 0.923828, 1, 0 )
+
+[sub_resource type="GradientTexture" id=5]
+gradient = SubResource( 4 )
+
+[sub_resource type="ParticlesMaterial" id=6]
+emission_shape = 2
+emission_box_extents = Vector3( 1, 1, 1 )
+flag_disable_z = true
+gravity = Vector3( -40, 0, 0 )
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+scale = 2.0
+color_ramp = SubResource( 5 )
+hue_variation = 0.01
+hue_variation_random = 1.0
+
+[sub_resource type="Gradient" id=7]
+colors = PoolColorArray( 1, 1, 1, 1, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+
+[sub_resource type="Curve" id=9]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=10]
+curve = SubResource( 9 )
+
+[sub_resource type="ParticlesMaterial" id=11]
+lifetime_randomness = 1.0
+emission_shape = 2
+emission_box_extents = Vector3( 5, 5, 1 )
+flag_disable_z = true
+direction = Vector3( -1, -1, 0 )
+spread = 60.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 50.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+tangential_accel = 3.0
+damping = 66.67
+scale = 2.0
+scale_random = 0.38
+scale_curve = SubResource( 10 )
+color_ramp = SubResource( 8 )
+
+[node name="Waterfall" type="Particles2D"]
+position = Vector2( 440, -102 )
+amount = 2000
+lifetime = 2.2
+preprocess = 6.0
+explosiveness = 0.03
+randomness = 0.33
+visibility_rect = Rect2( -200, -1.583, 220, 105.078 )
+process_material = SubResource( 3 )
+
+[node name="Stream" type="Particles2D" parent="."]
+position = Vector2( 32, 0 )
+amount = 200
+lifetime = 1.5
+preprocess = 2.0
+randomness = 1.0
+visibility_rect = Rect2( -45.8768, -0.997528, 46.8756, 1.99719 )
+process_material = SubResource( 6 )
+
+[node name="Mist" type="Particles2D" parent="."]
+position = Vector2( -27, 92 )
+amount = 200
+lifetime = 0.8
+explosiveness = 0.06
+visibility_rect = Rect2( -200, -80, 220, 100 )
+process_material = SubResource( 11 )
+
+[node name="MedRock" type="Sprite" parent="."]
+position = Vector2( 32, -3 )
+texture = ExtResource( 1 )
+offset = Vector2( 0.5, 0.5 )

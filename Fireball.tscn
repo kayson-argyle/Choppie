@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Items/Apple.png" type="Texture" id=1]
+[ext_resource path="res://Items/Orange.png" type="Texture" id=2]
+[ext_resource path="res://Items/Watermelon.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Fireball.gd" type="Script" id=4]
+
+
+
+
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 3.16228
+
+[sub_resource type="SpriteFrames" id=2]
+animations = [ {
+"frames": [ ExtResource( 1 ), ExtResource( 3 ), ExtResource( 2 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[node name="Fireball" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="Physics" type="RigidBody2D" parent="."]
+collision_layer = 0
+collision_mask = 5
+contacts_reported = 2
+contact_monitor = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Physics"]
+shape = SubResource( 1 )
+
+[node name="Fruit" type="AnimatedSprite" parent="Physics"]
+position = Vector2( -0.595395, -1.11908 )
+frames = SubResource( 2 )
+[connection signal="body_entered" from="Physics" to="." method="_on_Physics_body_entered"]

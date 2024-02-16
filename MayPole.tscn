@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://SizeableOak.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Trees/MayPole.png" type="Texture" id=2]
+[ext_resource path="res://ChopSparks.tscn" type="PackedScene" id=3]
+
+[node name="MayPole" instance=ExtResource( 1 )]
+seedName = "Stick"
+
+[node name="Sprite" parent="." index="0"]
+material = null
+position = Vector2( 0, -20 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D4" parent="Area2D" index="0"]
+visible = false
+polygon = PoolVector2Array( 6.1, -25.6, 6.1, 10.4, 2.1, 10.4, 2.1, -25.6 )
+
+[node name="Particles2D" parent="." index="2"]
+emitting = false
+
+[node name="Position2D" parent="." index="3"]
+position = Vector2( -3, -20 )
+
+[node name="Position2D2" parent="." index="4"]
+position = Vector2( 3, -20 )
+
+[node name="CollisionPolygon2D5" parent="." index="5"]
+visible = false
+disabled = true
+
+[node name="ChopSparks" parent="." index="7" instance=ExtResource( 3 )]
+scale = Vector2( 1.00747, 1 )

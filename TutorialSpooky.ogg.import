@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/TutorialSpooky.ogg-b6137df69936943f51512a6792c3cd3d.oggstr"
+
+[deps]
+
+source_file="res://TutorialSpooky.ogg"
+dest_files=[ "res://.import/TutorialSpooky.ogg-b6137df69936943f51512a6792c3cd3d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

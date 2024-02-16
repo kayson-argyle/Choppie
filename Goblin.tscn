@@ -1,0 +1,144 @@
+[gd_scene load_steps=11 format=2]
+
+[ext_resource path="res://Enemy.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Enemies/Enemies/Gobolin.png" type="Texture" id=2]
+[ext_resource path="res://Goblin.gd" type="Script" id=3]
+[ext_resource path="res://MoneyExplosion.tscn" type="PackedScene" id=4]
+
+[sub_resource type="PhysicsMaterial" id=1]
+friction = 0.01
+
+[sub_resource type="CapsuleShape2D" id=8]
+
+[sub_resource type="Animation" id=2]
+length = 4.0
+loop = true
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 5, 6 ]
+}
+
+[sub_resource type="Animation" id=3]
+length = 0.6
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 1, 2, 3 ]
+}
+
+[sub_resource type="Animation" id=4]
+loop = true
+step = 0.15
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.15, 0.3, 0.45, 0.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 4, 0, 4, 0 ]
+}
+tracks/1/type = "method"
+tracks/1/path = NodePath("..")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0.15, 0.45 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "doShank"
+}, {
+"args": [  ],
+"method": "doShank"
+} ]
+}
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 6, 0.5 )
+
+[node name="Goblin" instance=ExtResource( 1 )]
+mode = 2
+physics_material_override = SubResource( 1 )
+script = ExtResource( 3 )
+maxDist = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." index="0"]
+position = Vector2( 0.397299, 1.25811 )
+scale = Vector2( 0.283349, 0.159059 )
+shape = SubResource( 8 )
+
+[node name="CollisionPolygon2D" parent="Hitbox" index="0"]
+visible = false
+polygon = PoolVector2Array( -2.82836, -4.75219, 2.57271, -4.86355, 5.07837, -1.29996, 3.15491, 4.64499, -0.38862, 4.52687, -4.7772, 1.37274 )
+
+[node name="CollisionPolygon2D" parent="." index="2"]
+polygon = PoolVector2Array( -1.99314, -3.30448, 1.51477, -3.30448, 4.41483, 2.71574, 3.43052, 4.52687, -1.37293, 4.44813, -3.03634, 2.56351 )
+disabled = true
+
+[node name="ProgressBar" parent="." index="4"]
+margin_left = -5.07068
+margin_top = -5.81939
+margin_right = 28.9293
+margin_bottom = -1.81939
+rect_scale = Vector2( 0.3, 0.3 )
+max_value = 20.0
+value = 20.0
+
+[node name="Sprite" type="Sprite" parent="." index="5"]
+texture = ExtResource( 2 )
+hframes = 7
+frame = 4
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite" index="0"]
+autoplay = "Idle"
+anims/Idle = SubResource( 2 )
+anims/Run = SubResource( 3 )
+anims/Shank = SubResource( 4 )
+
+[node name="Shank" type="Area2D" parent="Sprite" index="1"]
+position = Vector2( -5.01023, 2.03386 )
+collision_layer = 0
+collision_mask = 2147483652
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite/Shank" index="0"]
+position = Vector2( 4.96097, 0 )
+shape = SubResource( 7 )
+
+[node name="RayCast2D" type="RayCast2D" parent="." index="6"]
+enabled = true
+cast_to = Vector2( 45, 0 )
+collision_mask = 6
+
+[node name="RayCast2D2" type="RayCast2D" parent="." index="7"]
+enabled = true
+cast_to = Vector2( -45, 0 )
+collision_mask = 6
+
+[node name="MoneyExplosion" parent="." index="8" instance=ExtResource( 4 )]
+
+[connection signal="body_entered" from="Sprite/Shank" to="." method="_on_Shank_body_entered"]
+[connection signal="body_exited" from="Sprite/Shank" to="." method="_on_Shank_body_exited"]

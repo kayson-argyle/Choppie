@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/Edvard-grieg-morning-mood.ogg-bc5a321a3b6631205692b3ba84e25aad.oggstr"
+
+[deps]
+
+source_file="res://Edvard-grieg-morning-mood.ogg"
+dest_files=[ "res://.import/Edvard-grieg-morning-mood.ogg-bc5a321a3b6631205692b3ba84e25aad.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

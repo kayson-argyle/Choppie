@@ -1,0 +1,4 @@
+[gd_scene format=2]
+
+[node name="Crystal Boss" type="Skeleton2D"]
+position = Vector2( 0, -3 )

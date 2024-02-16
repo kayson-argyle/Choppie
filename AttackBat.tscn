@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Bat.tscn" type="PackedScene" id=1]
+[ext_resource path="res://AttackBat.gd" type="Script" id=2]
+[ext_resource path="res://Damage.tscn" type="PackedScene" id=3]
+
+[sub_resource type="Animation" id=1]
+resource_name = "SS"
+step = 0.05
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.95, 1 ),
+"transitions": PoolRealArray( 0.307786, 2.2974, 1 ),
+"update": 0,
+"values": [ Vector2( 1, 1 ), Vector2( 0.7, 0.7 ), Vector2( 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprites:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8, 0.85, 0.9, 0.95, 1 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.1, 0.1 ), Vector2( 0, 0 ), Vector2( 0.1, -0.1 ), Vector2( -0.2, -0.1 ), Vector2( -0.1, 0.1 ), Vector2( 0, 0 ), Vector2( -0.1, 0.1 ), Vector2( -0.1, -0.2 ), Vector2( 0.1, -0.1 ), Vector2( -0.1, -0.1 ), Vector2( -0.1, 0.1 ), Vector2( 0, 0 ), Vector2( 0.1, 0.1 ), Vector2( 0.2, -0.1 ), Vector2( -0.1, -0.1 ), Vector2( 0, 0 ), Vector2( 0.1, 0.2 ), Vector2( 0.1, -0.1 ), Vector2( -0.1, -0.1 ), Vector2( 0.1, -0.1 ), Vector2( 0.1, 0.1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Sprites:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.95, 1 ),
+"transitions": PoolRealArray( 0.392292, 2.46229, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 4.05, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="AttackBat" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+droppedItem = "Bat Wing"
+attackDist = 50
+stupid = true
+attackTime = 3
+
+[node name="CollisionPolygon2D" parent="Hitbox" index="0"]
+visible = true
+
+[node name="CollisionPolygon2D" parent="." index="1"]
+polygon = PoolVector2Array( -0.734812, -2.28091, 1.05888, -2.36434, 1.10059, 1.55676, -0.818239, 1.55676 )
+
+[node name="Sprites" parent="." index="5"]
+position = Vector2( 0.1, 0.1 )
+
+[node name="Damage" parent="." index="6" instance=ExtResource( 3 )]
+collision_layer = 4
+collision_mask = 4
+
+[node name="CollisionPolygon2D" parent="Damage" index="0"]
+polygon = PoolVector2Array( -1.00085, -2.92346, 1.08027, -2.92346, 3.12421, -0.0990891, 1.00594, 2.13067, -1.18666, 2.24216, -3.11912, -0.0247636 )
+
+[node name="ShrinkShake" type="AnimationPlayer" parent="." index="7"]
+anims/SS = SubResource( 1 )
+
+[node name="MoneyExplosion" parent="." index="8"]
+amount = 5
+
+[connection signal="hit" from="Damage" to="." method="_on_Damage_hit"]
+[connection signal="animation_finished" from="ShrinkShake" to="." method="_on_ShrinkShake_animation_finished"]
+
+[editable path="Damage"]

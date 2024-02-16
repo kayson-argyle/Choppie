@@ -1,0 +1,159 @@
+{
+	"ArcherJack": {
+		"Greeting": {
+			"0": "ha ho! choppie approaches!",
+			"1": "what fortune! i wast looking for thou just moments ago",
+			"2": "in fact, there is a... er, a certain item that doth behoove me greatly...",
+			"3": "lo, just before the sun rose, i strode to the range to hone my aim, only to find my trusty bow had lost its spring!",
+			"4": "wo is me! i am ruined!"
+		}
+	},
+
+	"Gardener": {
+		"Greeting": {
+			"0": "oh wow, a person!",
+			"1": "ever since the villagers put that boulder in front of the waterfall, i haven't seen a soul",
+			"2": "you're crazy, they said, it's for your own good, they said",
+			"3": "so i've been here all alone",
+			"4": "well, not quite alone. i've grown myself a new best friend! say hello to the lumberjack, charles!",
+                  "5": "*choppie just stares quietly at the crazy woman*",
+                  "6": "you don't have any apples, do you? i love apples",
+                  "7": "charles has a lot of apples, but he never shares with me",
+                  "8": "if you bring me an apple i'll get you a present!"
+		},
+		"Apple": {
+			"0": "oh wow, you brought me an apple!",
+                  "1": {"text": "can i have it now?", "1": "[yes]", "2": "[no]"}
+		},
+            "Apple Exchange" : {
+                  "0": "oh thank you thank you!",
+                  "1": "*gives choppie a wad of pocket lint*",
+                  "2": "i always keep my promises",
+                  "3": "you know, i could really go for a mango right now",
+                  "4": "bring me a mango and i'll give you a really good present!"
+            },
+            "Apple Decline" : {
+                  "0": "gosh its just an apple, you don't have to get mad about it"
+            },
+		"Mango": {
+			"0": "oh wow, you brought me a mango!",
+                  "1": {"text": "give me the mango.", "1": "[yes]", "2": "[no]"}
+		},
+            "Mango Exchange" : {
+                  "0": "oh thank you thank you!",
+                  "1": "*gives choppie an extra large wad of pocket lint*",
+                  "2": "you know i always keep my promises",
+                  "3": "*eats mango and spits out the pit*",
+                  "4": "oh wow, charles is gonna have a little brother!"
+            },
+            "Mango Decline" : {
+                  "0": "has anyone ever told you you're stingy?"
+            },
+            "Generic" : {
+                  "0": "i like fruit, it's tasty and when i'm done feasting i can have more friends"
+            },
+            "Mango Tree" : {
+                  "0": "oh wow, my baby george has grown up so quickly",
+                  "1": "thank you so much mr. lumberjack, thank you thank you thank you!",
+                  "2": "bring me more fruits so i can have more babies!"
+            }
+
+	},
+
+
+	"Shoppeman": {
+		"Greeting": {
+			"0": "my wares are of the highest quality!"
+		}
+	},
+	
+	"TutorialDude": {
+		"Greeting": {
+			"0": "how the heck am i supposed to teach you how to aim the mouse and click to throw with these stupid rodents flying around?",
+			"1": "tell you what, i'll teach you how to aim with the mouse and click to throw if you kill these useless little twits",
+			"2": "Hear that you flappy crackpots? this lumber-dude is gonna smash you into dish detergent!",
+			"3": "Let's just keep this between you and me, but if you need something... potent... to wash your dishes, I'm just sayin', I may know a guy *wink wink*"
+		}, 
+
+		"Gratitude": {
+			"0": "take that you useless, en-winged crumpets!",
+			"1": "oh and as promised, your combat lesson:",
+			"2": "use your mouse to aim, then click to throw!",
+			"3": "anyway, if you're ever looking for work at an ethically questionable soap store... I may know a guy *wink wink*"
+		},
+		"Help": {
+			"0": "oh, and if you need more ammunition, use the Q and E keys to select your apples",
+			"1": "kill these wannabe avians and I'll teach you how to aim with your mouse and click to throw!",
+			"2": "now begone! I have some soap to brew"
+		},
+		"Leave": {
+			"0": "hey bucko, thanks for the help"
+		}
+	},
+
+	"BaldBeard": {
+		"Greeting": {
+			"0": "aim for the head!"
+			
+			
+		}
+	},
+	"Tutorial": {
+			"0": "hold space to chop",
+			"1": "use a and d {or the arrow keys} to move",
+			"2": "make sure to pick up all of the acorns!",
+			"3": "press w {or the up arrow} to jump",
+			"4": "double press w to double jump",
+			"5": "press i to open and close your inventory",
+			"6": "to move items in your inventory, simply click and drag them to the spot you want",
+			"7": "press s {or down} to interact with the world- open doors, talk, and more",
+                  "8": "some magical items can be chopped with your axe",
+			"9": "scroll with your mouse {or use q and e} to move your seed selector",
+                  "no arrow" : "no arrow"
+		
+	},
+	"QuestDude": {
+		"Greeting": {
+			"0": "halt!",
+			"1": "oh sorry my boy, i'm afraid little woodsmen such as yourself will certainly meet their demise behind this gate",
+			"2": "for my brothers and i, champions of the light and famous vanquishers of evil, nearly succumbed to the depths of darkness contained here", 
+			"3": "with this knowledge, how can a humble lumberjack possibly expect to survive?",
+			"4": "we have only recently regained our strength",
+			"5": "in fact, we plan to retake the fortress on the morrow",
+			"6": "we fear this may be our last battle",
+			"7": "thus, i must return to my camp, little woodsman",
+			"8": "farewell"
+		},
+		"Camp": {
+			"0": "oh little woodsman, you had no need to follow me back to our camp", 
+			"1": "the mood is rather dismal, we will only quench your spirit", 
+			"2": "you see, long ago, we vowed to vanquish the terror in the fortress",
+			"3": "for the fortress was once beautiful and renowned, but now overrun",
+			"4": "so to seal our vow, we promised to return only after the darkness was destroyed",
+			"5": "now, we must go home, for our mother has grown ill and she will only accept us with our honor intact",
+			"6": "so we have acted with haste, and will strike once more in but a few hours",
+			"7": "there is no guarantee we will return",
+			"8": "that is, unless...",
+			"9": "no, I am foolish to hope such things",
+			"10": "...unless the evil was meant to be destroyed by another...",
+			"11": "alas, there is no way to find such a hero",
+			"12": "unless by some stroke of the fates, that hero is you, little woodsman",
+			"13": "lo, the only way to tell would be to test your strength",
+			"14": {"text": "do you accept the challenge?", "1": "[accept]", "2": "[decline]"}
+		},
+		"Engarde": {
+			"0": "Engarde!"
+		},
+		"Offer": {
+			"0": "Well, i suppose you have until the morrow reconsider"
+		},
+		"Congrats": {
+			"0": "Little woodsman, our hearts are full, for lo, you have shown great strength",
+			"1": "We will open the gate for you, and if you so choose, you may enter, fight with valor, and if the fates smile upon you, vanquish the darkness within",
+			"2": "Be careful, and farewell"
+		}
+
+	}
+}
+
+	

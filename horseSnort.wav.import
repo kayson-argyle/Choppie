@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/horseSnort.wav-8f27e9c7ad93da3bd7acdbad0f521306.sample"
+
+[deps]
+
+source_file="res://horseSnort.wav"
+dest_files=[ "res://.import/horseSnort.wav-8f27e9c7ad93da3bd7acdbad0f521306.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

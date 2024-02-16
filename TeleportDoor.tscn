@@ -1,0 +1,160 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Interactable.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Environment/Backgrounds/PinkTutorialBackground.png" type="Texture" id=2]
+[ext_resource path="res://Environment/Backgrounds/BlueTutorialBackground.png" type="Texture" id=3]
+[ext_resource path="res://Environment/Backgrounds/RedTutorialBackground.png" type="Texture" id=4]
+[ext_resource path="res://Environment/Interactables/Doors/ArchDoor.png" type="Texture" id=5]
+[ext_resource path="res://Environment/Interactables/Doors/Arch.png" type="Texture" id=6]
+[ext_resource path="res://Environment/Interactables/Doors/ArchInside.png" type="Texture" id=7]
+[ext_resource path="res://TeleportDoor.gd" type="Script" id=8]
+[ext_resource path="res://TeleportDoorVars.gd" type="Script" id=9]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D stars1;
+uniform sampler2D stars2;
+uniform sampler2D stars3;
+uniform float amount = 0.0;
+
+void fragment(){
+	COLOR = vec4(0.051, 0.031, 0.075, 1.0);
+	COLOR += amount * texture(stars1, vec2(UV.x + 0.1 * cos(TIME * 0.1), UV.y + 0.1 * sin(TIME * 0.1))) * texture(stars1, vec2(UV.x + 0.1 * cos(TIME * 0.1), UV.y + 0.1 * sin(TIME * 0.1))).a;
+	COLOR += amount * texture(stars2, vec2(UV.x + 0.1 * cos(TIME * 0.1 + 10.0), UV.y + 0.1 * sin(TIME * 0.1 + 10.0))) * texture(stars2, vec2(UV.x + 0.1 * cos(TIME * 0.1 + 10.0), UV.y + 0.1 * sin(TIME * 0.1 + 10.0))).a;
+	COLOR += amount * texture(stars3, vec2(UV.x + 0.1 * cos(TIME * 0.1 + 20.0), UV.y + 0.1 * sin(TIME * 0.1 + 20.0))) * texture(stars3, vec2(UV.x + 0.1 * cos(TIME * 0.1 + 20.0), UV.y + 0.1 * sin(TIME * 0.1 + 20.0))).a;
+	if (COLOR.a > 1.0){
+		COLOR.a = 1.0
+	}
+	if (texture(TEXTURE, UV).a == 0.0) {
+		COLOR.a = 0.0;
+	}
+} "
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = SubResource( 1 )
+shader_param/amount = 3.0
+shader_param/stars1 = ExtResource( 2 )
+shader_param/stars2 = ExtResource( 3 )
+shader_param/stars3 = ExtResource( 4 )
+
+[sub_resource type="Animation" id=3]
+resource_name = "Close"
+tracks/0/type = "bezier"
+tracks/0/path = NodePath("Interactable:scale:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"points": PoolRealArray( 1e-05, -0.25, 0, 0, 0.494146, 1, -0.216535, -0.107669, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Interactable:self_modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0.509804, 0.509804, 0.509804, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ArchInside:material:shader_param/amount")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 3.0 ]
+}
+
+[sub_resource type="Animation" id=5]
+length = 5.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ArchInside:material:shader_param/amount")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1.3, 5 ),
+"transitions": PoolRealArray( 1, 2.46229, 1 ),
+"update": 0,
+"values": [ 0.0, 0.0, 3.0 ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Interactable:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.402614, -0.00259936, 0, -0.140365, 0.635107, 0.25, 0 ),
+"times": PoolRealArray( 0, 1 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Interactable:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 1, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Interactable:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 0.509804, 0.509804, 0.509804, 1 ) ]
+}
+
+[node name="TeleportDoor" type="Sprite"]
+position = Vector2( 0, 2 )
+z_index = 1
+texture = ExtResource( 6 )
+offset = Vector2( -6, 9 )
+script = ExtResource( 9 )
+
+[node name="ArchInside" type="Sprite" parent="."]
+material = SubResource( 4 )
+position = Vector2( -6, 9 )
+z_index = -1
+texture = ExtResource( 7 )
+
+[node name="Interactable" parent="." instance=ExtResource( 1 )]
+position = Vector2( -3.5, 0 )
+z_index = -1
+texture = ExtResource( 5 )
+offset = Vector2( -2.5, 9 )
+script = ExtResource( 8 )
+
+[node name="Outline" parent="Interactable" index="0"]
+position = Vector2( 2.5, -5 )
+z_index = 1
+
+[node name="InteractionArea" parent="Interactable" index="1"]
+visible = false
+position = Vector2( -2.5, 9 )
+
+[node name="CollisionPolygon2D" parent="Interactable/InteractionArea" index="0"]
+position = Vector2( 5, -14 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Close = SubResource( 3 )
+anims/Open = SubResource( 5 )
+
+[editable path="Interactable"]

@@ -1,0 +1,32 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Lever.gd" type="Script" id=1]
+[ext_resource path="res://Interactable.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Environment/Interactables/LeverBase.png" type="Texture" id=3]
+[ext_resource path="res://Environment/Interactables/LeverBaseOutline.png" type="Texture" id=4]
+[ext_resource path="res://Environment/Interactables/LeverHandle.png" type="Texture" id=5]
+[ext_resource path="res://Environment/Interactables/LeverHandleOutline.png" type="Texture" id=6]
+
+[node name="Lever" instance=ExtResource( 2 )]
+position = Vector2( 1, -1 )
+z_index = 1
+texture = ExtResource( 3 )
+script = ExtResource( 1 )
+
+[node name="Handle" type="Sprite" parent="." index="0"]
+position = Vector2( 0, 2 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, -2 )
+
+[node name="Outline" type="Sprite" parent="Handle" index="0"]
+visible = false
+position = Vector2( 0, -2 )
+z_index = -1
+texture = ExtResource( 6 )
+
+[node name="Outline" parent="." index="1"]
+texture = ExtResource( 4 )
+
+[node name="CollisionPolygon2D" parent="InteractionArea" index="0"]
+visible = false
+polygon = PoolVector2Array( -3, 4, 3, 4, 3, -5, -3, -5 )

@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/groundhit.wav-ef5ed54323d36f6a6ae76f27141f5bbd.sample"
+
+[deps]
+
+source_file="res://groundhit.wav"
+dest_files=[ "res://.import/groundhit.wav-ef5ed54323d36f6a6ae76f27141f5bbd.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

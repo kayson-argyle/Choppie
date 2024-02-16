@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=2]
+
+[sub_resource type="CanvasItemMaterial" id=1]
+blend_mode = 1
+
+[sub_resource type="StreamTexture" id=2]
+flags = 4
+load_path = "res://.import/light.png-9cb4b367c8c726830193cc7386cfe81c.stex"
+
+[node name="ShapeableLight" type="Polygon2D"]
+material = SubResource( 1 )
+position = Vector2( -1, -10 )
+offset = Vector2( 14, 50 )
+texture = SubResource( 2 )
+polygon = PoolVector2Array( -206, -494, 254, -502, 502, -226, 510, 182, 270, 450, -222, 446, -462, 166, -443, -228 )
+uv = PoolVector2Array( 282.889, 39.3334, 742.889, 31.3334, 990.889, 307.333, 998.889, 715.333, 758.889, 983.333, 266.889, 979.333, 26.8889, 699.333, 45.8889, 305.333 )

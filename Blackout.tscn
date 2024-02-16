@@ -1,0 +1,439 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Axes/Axe.png" type="Texture" id=1]
+[ext_resource path="res://Particles/BlueGlow.png" type="Texture" id=2]
+[ext_resource path="res://Oswald.tres" type="DynamicFont" id=3]
+[ext_resource path="res://Blackout.gd" type="Script" id=4]
+
+[sub_resource type="Animation" id=1]
+resource_name = "Blackout"
+length = 60.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Blackout/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.8, 14.4, 31.5, 40.5, 50.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Oh little lumberjack, when will you learn?", "When I sent you here, it wasn't 
+to destroy, remember?", "Maybe this will help", "There, now when you chop with this axe, no longer will you damage the world around you", "Instead, nature will yield its fruits to you", "Farewell, little lumberjack" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blackout/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2.5, 4.3, 5.8, 8.3, 9.8, 11.6, 13.1, 15.3, 16.8, 18.6, 20.1, 34.3, 35.8, 37.6, 39.1, 41.8, 43.3, 45.1, 48.6 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Blackout/Axe:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 80, -0.25, 0, 0.25, 0, 79, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 22.3, 23.6879 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Blackout/Axe:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 139, -0.25, 0, 0.25, 0, 44.3769, -0.970104, -0.00701904, 0.429895, 0.101154, 49.0214, -1.0701, -0.0540886, 1.12989, 0.0540886, 45.0176, -1.42002, -0.0934639, 1.77998, 0.0934639, 49.9712, -1.49233, -0.0934639, 1.30767, 0.0934639, 45.1111, -0.25, 0, 0.25, 0, 49.9712, -0.25, 0, 0.25, 0, 45.1111, -0.25, 0, 0.25, 0, 49.8777, -0.25, 0, 0.25, 0, 45.1111, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 22.3, 23.3, 24.4, 26.8075, 29.3799, 31.5389, 33.4467, 35.5687, 37.9, 40.4208 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Blackout/Axe:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -9.147, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 22.3 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Blackout/Axe:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 9.147, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 22.3 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Blackout/Axe/Sprite:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1.93884, -0.25, 0, 0.510788, 0.428448, -4.6425, -0.136904, 4.12275, 0.25, 0 ),
+"times": PoolRealArray( 27.6175, 28.3 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Blackout/Axe/Sprite:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0.960329, -0.25, 0, 0.25, 0, 1.45503, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 27.6175, 28.6652 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Blackout/Axe/Sprite:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 27.6, 27.8, 28.1, 28.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Blackout/Axe/Particles2D:emitting")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 27.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Blackout/Axe:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 18.7, 31.9, 35 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=8]
+resource_name = "Blackout 2"
+length = 59.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Blackout/Label:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 7.8, 14.4, 31.5, 40.5, 48.8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1 ),
+"update": 1,
+"values": [ "Oh little lumberjack, when will you learn?", "When I sent you here, it wasn't 
+to destroy, remember?", "Maybe this will help", "There, now when you chop with this
+ axe, no longer will you damage the
+ world around you", "Instead, nature will yield its fruits to you", "Good luck, little lumberjack" ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Blackout/Label:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2.5, 4.3, 5.8, 8.3, 9.8, 11.6, 13.1, 15.3, 16.8, 18.6, 20.1, 34.3, 35.8, 37.6, 39.1, 41.8, 43.3, 45.1, 46.8, 50.4, 51.9, 53.7, 57.2 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Blackout/Axe:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 80, -0.25, 0, 0.25, 0, 79, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 22.3, 23.6879 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Blackout/Axe:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 139, -0.25, 0, 0.25, 0, 44.3769, -0.970104, -0.00701904, 0.429895, 0.101154, 49.0214, -1.0701, -0.0540886, 1.12989, 0.0540886, 45.0176, -1.42002, -0.0934639, 1.77998, 0.0934639, 49.9712, -1.49233, -0.0934639, 1.30767, 0.0934639, 45.1111, -0.25, 0, 0.25, 0, 49.9712, -0.25, 0, 0.25, 0, 45.1111, -0.25, 0, 0.25, 0, 49.8777, -0.25, 0, 0.25, 0, 45.1111, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 22.3, 23.3, 24.4, 26.8075, 29.3799, 31.5389, 33.4467, 35.5687, 37.9, 40.4208 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Blackout/Axe:scale:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( -9.147, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 22.3 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Blackout/Axe:scale:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( 9.147, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 22.3 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Blackout/Axe/Sprite:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1.93884, -0.25, 0, 0.510788, 0.428448, -4.6425, -0.136904, 4.12275, 0.25, 0 ),
+"times": PoolRealArray( 27.6175, 28.3 )
+}
+tracks/7/type = "bezier"
+tracks/7/path = NodePath("Blackout/Axe/Sprite:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"points": PoolRealArray( 0.960329, -0.25, 0, 0.25, 0, 1.45503, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 27.6175, 28.6652 )
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Blackout/Axe/Sprite:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 27.6, 27.8, 28.1, 28.3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+tracks/9/type = "value"
+tracks/9/path = NodePath("Blackout/Axe/Particles2D:emitting")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/keys = {
+"times": PoolRealArray( 0, 27.8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+tracks/10/type = "value"
+tracks/10/path = NodePath("Blackout/Axe:modulate")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/keys = {
+"times": PoolRealArray( 18.7, 31.9, 35 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Blackout/Label:rect_position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -4, 40 ) ]
+}
+tracks/1/type = "bezier"
+tracks/1/path = NodePath("Blackout/Axe:scale:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"points": PoolRealArray( -9.147, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/2/type = "bezier"
+tracks/2/path = NodePath("Blackout/Axe:scale:y")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"points": PoolRealArray( 9.147, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/3/type = "bezier"
+tracks/3/path = NodePath("Blackout/Axe:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"points": PoolRealArray( 79, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/4/type = "bezier"
+tracks/4/path = NodePath("Blackout/Axe:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"points": PoolRealArray( 49, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/5/type = "bezier"
+tracks/5/path = NodePath("Blackout/Axe/Sprite:position:x")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"points": PoolRealArray( -4.22186, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/6/type = "bezier"
+tracks/6/path = NodePath("Blackout/Axe/Sprite:position:y")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"points": PoolRealArray( 1.45503, -0.25, 0, 0.25, 0 ),
+"times": PoolRealArray( 0 )
+}
+tracks/7/type = "value"
+tracks/7/path = NodePath("Blackout/Axe/Sprite:modulate")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+tracks/8/type = "value"
+tracks/8/path = NodePath("Blackout/Axe:modulate")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Gradient" id=3]
+offsets = PoolRealArray( 0, 0.229167, 0.493056, 0.847222 )
+colors = PoolColorArray( 1, 1, 1, 0, 1, 1, 1, 0.552941, 1, 1, 1, 0.505882, 1, 1, 1, 0 )
+
+[sub_resource type="GradientTexture" id=4]
+gradient = SubResource( 3 )
+
+[sub_resource type="Curve" id=5]
+min_value = -200.0
+max_value = 200.0
+_data = [ Vector2( 0, -200 ), 0.0, 0.0, 0, 0, Vector2( 1, 200 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=6]
+curve = SubResource( 5 )
+
+[sub_resource type="ParticlesMaterial" id=7]
+emission_shape = 2
+emission_box_extents = Vector3( 100, 50, 1 )
+flag_disable_z = true
+direction = Vector3( 0, 5, 0 )
+spread = 30.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 200.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+linear_accel = 1000.0
+linear_accel_curve = SubResource( 6 )
+color = Color( 1, 1, 1, 0.580392 )
+color_ramp = SubResource( 4 )
+
+[node name="Blackout" type="AnimationPlayer"]
+autoplay = "Blackout 2"
+anims/Blackout = SubResource( 1 )
+"anims/Blackout 2" = SubResource( 8 )
+anims/RESET = SubResource( 2 )
+script = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_left = -19.0
+margin_top = -7.0
+margin_right = 182.0
+margin_bottom = 104.0
+color = Color( 0, 0, 0, 1 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_right = 2000.0
+margin_bottom = 1125.0
+rect_scale = Vector2( 0.08, 0.08 )
+custom_fonts/font = ExtResource( 3 )
+text = "Good luck, little lumberjack"
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Axe" type="Sprite" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( 79, 45.1111 )
+rotation = 0.392699
+scale = Vector2( -9.147, 9.147 )
+texture = ExtResource( 1 )
+
+[node name="Particles2D" type="Particles2D" parent="Axe"]
+position = Vector2( 0.281761, -1.25159 )
+rotation = 1.5708
+scale = Vector2( 0.01, 0.01 )
+amount = 100
+lifetime = 2.0
+one_shot = true
+explosiveness = 0.84
+randomness = 0.79
+process_material = SubResource( 7 )
+texture = ExtResource( 2 )
+
+[node name="Sprite" type="Sprite" parent="Axe"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -4.6425, 1.45503 )
+scale = Vector2( 0.01, 0.1 )
+texture = ExtResource( 2 )
+
+[connection signal="animation_finished" from="." to="." method="_on_Blackout_animation_finished"]

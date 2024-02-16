@@ -1,0 +1,744 @@
+[gd_scene load_steps=61 format=2]
+
+[ext_resource path="res://Characters/Skins/Choppie.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://Axes/Axe.png" type="Texture" id=3]
+[ext_resource path="res://Inventory.gd" type="Script" id=4]
+[ext_resource path="res://UI/Triangle.png" type="Texture" id=5]
+[ext_resource path="res://Environment/Backgrounds/BetterClouds.png" type="Texture" id=6]
+[ext_resource path="res://Environment/Backgrounds/Parallax mountains.png" type="Texture" id=7]
+[ext_resource path="res://UI/Choppie Health Test Top.png" type="Texture" id=8]
+[ext_resource path="res://UI/Choppie Health Test Bottom.png" type="Texture" id=9]
+[ext_resource path="res://UI/Choppie Health Test Bar.png" type="Texture" id=10]
+[ext_resource path="res://UI/SeedSelector.png" type="Texture" id=11]
+[ext_resource path="res://Enemies/Bosses/Fragon/HealthBar.png" type="Texture" id=12]
+[ext_resource path="res://Scripts/Camera2D.gd" type="Script" id=13]
+[ext_resource path="res://Enemies/Bosses/Fragon/HealthBackground.png" type="Texture" id=14]
+[ext_resource path="res://Scripts/Bar.gd" type="Script" id=15]
+[ext_resource path="res://libel-suit-rg.ttf" type="DynamicFontData" id=16]
+[ext_resource path="res://UI/SeedFrame.png" type="Texture" id=17]
+[ext_resource path="res://InventoryPoint.tscn" type="PackedScene" id=18]
+[ext_resource path="res://coolsville.tres" type="DynamicFont" id=19]
+[ext_resource path="res://FabFont.tres" type="DynamicFont" id=20]
+[ext_resource path="res://Selector.gd" type="Script" id=21]
+[ext_resource path="res://UI/StatueHealthBackground.png" type="Texture" id=22]
+[ext_resource path="res://UI/StatueHealthBar.png" type="Texture" id=23]
+[ext_resource path="res://UI/ShoppeInventory.png" type="Texture" id=24]
+[ext_resource path="res://Scripts/Shoppe.gd" type="Script" id=25]
+[ext_resource path="res://Oswald.tres" type="DynamicFont" id=26]
+[ext_resource path="res://UI/ShoppeBuy.png" type="Texture" id=27]
+[ext_resource path="res://UI/ShoppeUp.png" type="Texture" id=28]
+[ext_resource path="res://UI/ShoppeUpPressed.png" type="Texture" id=29]
+[ext_resource path="res://UI/ShoppeDownPressed.png" type="Texture" id=30]
+[ext_resource path="res://UI/ShoppeBuyPressed.png" type="Texture" id=31]
+[ext_resource path="res://UI/ShoppeDown.png" type="Texture" id=32]
+[ext_resource path="res://MouseDelay.tscn" type="PackedScene" id=33]
+[ext_resource path="res://Whoosh1.ogg" type="AudioStream" id=34]
+[ext_resource path="res://Whoosh5.ogg" type="AudioStream" id=35]
+[ext_resource path="res://Whoosh3.ogg" type="AudioStream" id=36]
+[ext_resource path="res://Whoosh2.ogg" type="AudioStream" id=37]
+[ext_resource path="res://Whoosh6.ogg" type="AudioStream" id=38]
+[ext_resource path="res://Whoosh4.ogg" type="AudioStream" id=39]
+[ext_resource path="res://Scripts/Transition.gd" type="Script" id=40]
+[ext_resource path="res://Scripts/EscapeKey.gd" type="Script" id=41]
+[ext_resource path="res://UI/NewDialogue.png" type="Texture" id=42]
+[ext_resource path="res://Scripts/Dialogue.gd" type="Script" id=43]
+[ext_resource path="res://MuteButton.gd" type="Script" id=44]
+[ext_resource path="res://UI/Unmuted.png" type="Texture" id=45]
+[ext_resource path="res://UI/Muted.png" type="Texture" id=46]
+[ext_resource path="res://MoneyDisplay.gd" type="Script" id=47]
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 3, 7.5 )
+
+[sub_resource type="Animation" id=14]
+resource_name = "Flash"
+length = 0.25
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Color( 100, 100, 100, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:self_modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 100, 100, 100, 1 ) ]
+}
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 12 ), ExtResource( 23 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 14 ), ExtResource( 22 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 1, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.603922, 0.427451, 0.427451, 1 )
+
+[sub_resource type="Animation" id=9]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ true ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.3 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0, 70 ), Vector2( 0, 23 ) ]
+}
+
+[sub_resource type="DynamicFont" id=10]
+size = 100
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 16 )
+
+[sub_resource type="Animation" id=11]
+length = 2.0
+loop = true
+step = 0.5
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 1,
+"values": [ 0, 0, 0, 3 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Axe:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ Vector2( -2.5, -4.5 ), Vector2( -2.5, -3.5 ) ]
+}
+
+[sub_resource type="Animation" id=12]
+length = 0.8
+step = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ 2, 1 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Axe:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.5, -4.5 ) ]
+}
+tracks/2/type = "method"
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"values": [ {
+"args": [  ],
+"method": "footstep"
+}, {
+"args": [  ],
+"method": "footstep"
+} ]
+}
+
+[sub_resource type="Animation" id=13]
+length = 2.0
+step = 2.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Sprite:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0.1 ),
+"transitions": PoolRealArray( 1 ),
+"update": 1,
+"values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("Sprite/Axe:offset")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -2.5, -4.5 ) ]
+}
+
+[node name="Player" type="KinematicBody2D"]
+process_priority = -2
+z_index = 1
+collision_layer = 12
+collision_mask = 12
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 62.0 ]
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+self_modulate = Color( 100, 100, 100, 1 )
+position = Vector2( 0, -7 )
+z_index = 1
+texture = ExtResource( 1 )
+hframes = 4
+frame = 1
+
+[node name="Axe" type="Sprite" parent="Sprite"]
+position = Vector2( -5.002, -0.5 )
+z_index = 2
+texture = ExtResource( 3 )
+centered = false
+offset = Vector2( -2.5, -4.5 )
+
+[node name="Axe Collision" type="Area2D" parent="Sprite"]
+position = Vector2( -0.0175385, 0.0701542 )
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite/Axe Collision"]
+polygon = PoolVector2Array( -9.96704, -1.98587, -8.5177, -0.517942, -4.54128, -0.0534081, -4.4298, -1.11255, -8.49911, -3.41663 )
+
+[node name="Item Pick" type="Area2D" parent="Sprite"]
+collision_layer = 8
+collision_mask = 8
+
+[node name="hitbox" type="CollisionShape2D" parent="Sprite/Item Pick"]
+shape = SubResource( 2 )
+
+[node name="FlashWhite" type="AnimationPlayer" parent="Sprite"]
+anims/Flash = SubResource( 14 )
+anims/RESET = SubResource( 15 )
+
+[node name="CameraHolder" type="Node" parent="."]
+
+[node name="Camera2D" type="Camera2D" parent="CameraHolder"]
+z_index = 2
+current = true
+script = ExtResource( 13 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CameraHolder/Camera2D"]
+layer = 7
+offset = Vector2( 80, 45 )
+transform = Transform2D( 1, 0, 0, 1, 80, 45 )
+
+[node name="Control" type="Control" parent="CameraHolder/Camera2D/CanvasLayer"]
+margin_right = 40.0
+margin_bottom = 40.0
+mouse_filter = 2
+
+[node name="Health" type="Sprite" parent="CameraHolder/Camera2D/CanvasLayer/Control"]
+position = Vector2( -73, 38 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 8 )
+
+[node name="HealthBar" type="Sprite" parent="CameraHolder/Camera2D/CanvasLayer/Control/Health"]
+position = Vector2( 4, 0 )
+z_index = -1
+texture = ExtResource( 10 )
+offset = Vector2( 12.5, 0 )
+
+[node name="Health Bottom" type="Sprite" parent="CameraHolder/Camera2D/CanvasLayer/Control"]
+position = Vector2( -61.5, 38 )
+scale = Vector2( 0.5, 0.5 )
+z_index = -2
+texture = ExtResource( 9 )
+
+[node name="BossHealth" type="Node2D" parent="CameraHolder/Camera2D/CanvasLayer/Control"]
+visible = false
+position = Vector2( 0, -4 )
+scale = Vector2( 0.5, 0.5 )
+
+[node name="Bar" type="AnimatedSprite" parent="CameraHolder/Camera2D/CanvasLayer/Control/BossHealth"]
+position = Vector2( 0, -69 )
+frames = SubResource( 3 )
+script = ExtResource( 15 )
+
+[node name="Background" type="AnimatedSprite" parent="CameraHolder/Camera2D/CanvasLayer/Control/BossHealth"]
+position = Vector2( 0, -69 )
+z_index = -1
+frames = SubResource( 4 )
+
+[node name="Inventory" type="Sprite" parent="CameraHolder/Camera2D/CanvasLayer/Control"]
+position = Vector2( 0, 40 )
+scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 17 )
+script = ExtResource( 4 )
+
+[node name="Slots" type="Node2D" parent="CameraHolder/Camera2D/CanvasLayer/Control/Inventory"]
+
+[node name="InventoryPoint" parent="CameraHolder/Camera2D/CanvasLayer/Control/Inventory/Slots" instance=ExtResource( 18 )]
+position = Vector2( -42, 0 )
+
+[node name="NotEnough" parent="CameraHolder/Camera2D/CanvasLayer/Control/Inventory/Slots/InventoryPoint/Node2D" index="0"]
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="InventoryPoint2" parent="CameraHolder/Camera2D/CanvasLayer/Control/Inventory/Slots" instance=ExtResource( 18 )]
+position = Vector2( -25, 0 )
+
+[node name="InventoryPoint3" parent="CameraHolder/Camera2D/CanvasLayer/Control/Inventory/Slots" instance=ExtResource( 18 )]
+position = Vector2( -8, 0 )
+
+[node name="InventoryPoint4" parent="CameraHolder/Camera2D/CanvasLayer/Control/Inventory/Slots" instance=ExtResource( 18 )]
+position = Vector2( 9, 0 )
+
+[node name="InventoryPoint5" parent="CameraHolder/Camera2D/CanvasLayer/Control/Inventory/Slots" instance=ExtResource( 18 )]
+position = Vector2( 26, 0 )
+
+[node name="InventoryPoint6" parent="CameraHolder/Camera2D/CanvasLayer/Control/Inventory/Slots" instance=ExtResource( 18 )]
+position = Vector2( 43, 0 )
+
+[node name="Selector" type="Sprite" parent="CameraHolder/Camera2D/CanvasLayer/Control/Inventory"]
+position = Vector2( -42, 0 )
+z_index = 1
+texture = ExtResource( 11 )
+script = ExtResource( 21 )
+
+[node name="Dialogue" type="Sprite" parent="CameraHolder/Camera2D/CanvasLayer/Control"]
+position = Vector2( 0, 70 )
+z_index = 3
+texture = ExtResource( 42 )
+script = ExtResource( 43 )
+
+[node name="Scale" type="Node2D" parent="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue"]
+light_mask = 4
+position = Vector2( -80, -22.5 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Text" type="Label" parent="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue/Scale"]
+light_mask = 0
+margin_left = 57.5784
+margin_top = 45.2
+margin_right = 1557.58
+margin_bottom = 395.2
+rect_min_size = Vector2( 1300, 300 )
+rect_pivot_offset = Vector2( 750, 0 )
+rect_clip_content = true
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 0.14902 )
+custom_fonts/font = ExtResource( 20 )
+text = "yeet"
+align = 1
+valign = 1
+autowrap = true
+clip_text = true
+uppercase = true
+
+[node name="Options" type="HBoxContainer" parent="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue/Scale"]
+visible = false
+light_mask = 0
+anchor_left = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 57.5784
+margin_top = 315.2
+margin_right = 1557.58
+margin_bottom = 415.2
+grow_horizontal = 2
+rect_min_size = Vector2( 1300, 20 )
+rect_pivot_offset = Vector2( 750, 0 )
+rect_clip_content = true
+custom_constants/separation = 100
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option1" type="Button" parent="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue/Scale/Options"]
+light_mask = 0
+margin_left = 490.0
+margin_right = 700.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 20, 100 )
+rect_clip_content = true
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 20 )
+custom_styles/hover = SubResource( 6 )
+custom_styles/pressed = SubResource( 7 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/disabled = SubResource( 7 )
+custom_styles/normal = SubResource( 7 )
+text = "[accept]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Option2" type="Button" parent="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue/Scale/Options"]
+light_mask = 0
+margin_left = 800.0
+margin_right = 1010.0
+margin_bottom = 100.0
+rect_min_size = Vector2( 20, 100 )
+rect_clip_content = true
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 20 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 8 )
+custom_styles/focus = SubResource( 8 )
+custom_styles/disabled = SubResource( 8 )
+custom_styles/normal = SubResource( 8 )
+text = "[accept]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Arrow" type="Sprite" parent="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue/Scale"]
+position = Vector2( 1520, 375 )
+texture = ExtResource( 5 )
+offset = Vector2( 0, 2.82012 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue"]
+anims/Open = SubResource( 9 )
+
+[node name="Shoppe" type="TextureRect" parent="CameraHolder/Camera2D/CanvasLayer/Control"]
+visible = false
+margin_left = 31.0
+margin_top = -41.0
+margin_right = 76.0
+margin_bottom = 3.0
+texture = ExtResource( 24 )
+script = ExtResource( 25 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Exit" type="TextureButton" parent="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe"]
+margin_left = 39.0
+margin_top = 1.0
+margin_right = 44.0
+margin_bottom = 6.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Purchase" type="TextureButton" parent="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe"]
+margin_left = 31.0
+margin_top = 29.0
+margin_right = 43.0
+margin_bottom = 41.0
+texture_normal = ExtResource( 27 )
+texture_pressed = ExtResource( 31 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Up" type="TextureButton" parent="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe"]
+margin_left = 25.0
+margin_top = 32.0
+margin_right = 30.0
+margin_bottom = 36.0
+texture_normal = ExtResource( 28 )
+texture_pressed = ExtResource( 29 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Down" type="TextureButton" parent="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe"]
+margin_left = 25.0
+margin_top = 37.0
+margin_right = 30.0
+margin_bottom = 41.0
+texture_normal = ExtResource( 32 )
+texture_pressed = ExtResource( 30 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Node2D" type="Node2D" parent="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe"]
+z_index = 1
+
+[node name="Text" type="Label" parent="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe/Node2D"]
+margin_left = 11.0
+margin_top = 37.0
+margin_right = 25.0
+margin_bottom = 45.0
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = ExtResource( 19 )
+text = "0"
+align = 2
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MouseDelay" parent="CameraHolder/Camera2D/CanvasLayer/Control" instance=ExtResource( 33 )]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="CameraHolder/Camera2D/CanvasLayer/Control"]
+layer = 8
+scale = Vector2( 20, 20 )
+transform = Transform2D( 20, 0, 0, 20, 0, 0 )
+
+[node name="Transition" type="ColorRect" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = -84.1122
+margin_top = -51.9439
+margin_right = 85.8878
+margin_bottom = 52.0561
+mouse_filter = 2
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 40 )
+
+[node name="Exit" type="ColorRect" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer"]
+pause_mode = 2
+visible = false
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 2.98956
+margin_top = 2.06569
+margin_right = 35.9896
+margin_bottom = 21.0657
+rect_scale = Vector2( 0.05, 0.05 )
+color = Color( 0, 0, 0, 1 )
+script = ExtResource( 41 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Outline" type="ColorRect" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit"]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 1.0
+margin_top = 1.0
+margin_right = 32.0
+margin_bottom = 18.0
+grow_horizontal = 2
+grow_vertical = 2
+rect_pivot_offset = Vector2( 1, 0.5 )
+color = Color( 0.372549, 0.788235, 0.788235, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="TextureButton" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit"]
+margin_left = 3.0
+margin_top = 5.0
+margin_right = 15.0
+margin_bottom = 13.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button2" type="TextureButton" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit"]
+margin_left = 19.0
+margin_top = 4.0
+margin_right = 28.0
+margin_bottom = 13.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Scale" type="Node2D" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit"]
+position = Vector2( -1.7912, -5.31381 )
+scale = Vector2( 0.1, 0.1 )
+
+[node name="Label" type="Label" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit/Scale"]
+margin_left = 100.0
+margin_top = -29.9999
+margin_right = 260.0
+margin_bottom = 91.0001
+custom_fonts/font = SubResource( 10 )
+text = "Exit?"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit/Scale"]
+margin_left = 50.0
+margin_top = 90.0001
+margin_right = 166.0
+margin_bottom = 211.0
+custom_fonts/font = SubResource( 10 )
+text = "Yes"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit/Scale"]
+margin_left = 210.0
+margin_top = 90.0001
+margin_right = 290.0
+margin_bottom = 211.0
+custom_fonts/font = SubResource( 10 )
+text = "No"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MuteButton" type="CheckBox" parent="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit/Scale"]
+margin_left = 886.0
+margin_top = -340.0
+margin_right = 994.0
+margin_bottom = -232.0
+custom_icons/radio_checked = ExtResource( 46 )
+custom_icons/checked = ExtResource( 46 )
+custom_icons/radio_unchecked = ExtResource( 45 )
+custom_icons/unchecked = ExtResource( 45 )
+script = ExtResource( 44 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Money" type="Label" parent="CameraHolder/Camera2D/CanvasLayer/Control"]
+margin_left = 33.373
+margin_top = 36.2866
+margin_right = 135.373
+margin_bottom = 185.287
+rect_scale = Vector2( 0.05, 0.05 )
+custom_fonts/font = ExtResource( 26 )
+text = "$0"
+script = ExtResource( 47 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Idle = SubResource( 11 )
+anims/Run = SubResource( 12 )
+anims/Stand = SubResource( 13 )
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.08, 0.08 )
+motion_mirroring = Vector2( 160, 180 )
+
+[node name="Node2D" type="Node2D" parent="ParallaxBackground/ParallaxLayer"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer/Node2D"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 6 )
+centered = false
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.12, 0.12 )
+motion_mirroring = Vector2( 160, 0 )
+
+[node name="Node2D" type="Node2D" parent="ParallaxBackground/ParallaxLayer2"]
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2/Node2D"]
+scale = Vector2( 2, 2 )
+texture = ExtResource( 7 )
+centered = false
+offset = Vector2( 0, -18 )
+
+[node name="ChoppieHitBox" type="CollisionPolygon2D" parent="."]
+polygon = PoolVector2Array( 1.5, 0, 2.5, -7, 2.5, -13, -2.5, -13, -2.5, -7, -1.5, -0.053 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="ProjectileHolder" type="Node" parent="."]
+
+[node name="Sounds" type="Node2D" parent="."]
+
+[node name="Whoosh1" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 34 )
+
+[node name="Whoosh2" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 37 )
+
+[node name="Whoosh3" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 36 )
+
+[node name="Whoosh4" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 39 )
+
+[node name="Whoosh5" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 35 )
+
+[node name="Whoosh6" type="AudioStreamPlayer" parent="Sounds"]
+stream = ExtResource( 38 )
+
+[node name="Jump" type="Area2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Jump"]
+polygon = PoolVector2Array( -1.46094, -0.0078125, 1.46875, -0.0078125, 1.14063, 0.492188, -1.125, 0.5 )
+
+[node name="Things" type="Node2D" parent="."]
+
+[connection signal="pressed" from="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue/Scale/Options/Option1" to="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue" method="_on_Option1_pressed"]
+[connection signal="pressed" from="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue/Scale/Options/Option2" to="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue" method="_on_Option2_pressed"]
+[connection signal="animation_finished" from="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue/AnimationPlayer" to="CameraHolder/Camera2D/CanvasLayer/Control/Dialogue" method="_on_AnimationPlayer_animation_finished"]
+[connection signal="pressed" from="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe/Exit" to="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe" method="_on_TextureButton_pressed"]
+[connection signal="button_down" from="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe/Purchase" to="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe" method="_on_Purchase_button_down"]
+[connection signal="button_down" from="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe/Up" to="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe" method="_on_Up_button_down"]
+[connection signal="button_down" from="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe/Down" to="CameraHolder/Camera2D/CanvasLayer/Control/Shoppe" method="_on_Down_button_down"]
+[connection signal="button_down" from="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit/Button" to="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit" method="_on_Button_button_down"]
+[connection signal="button_down" from="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit/Button2" to="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit" method="_on_Button2_button_down"]
+[connection signal="toggled" from="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit/Scale/MuteButton" to="CameraHolder/Camera2D/CanvasLayer/Control/CanvasLayer/Exit/Scale/MuteButton" method="_on_MuteButton_toggled"]
+[connection signal="tween_completed" from="Tween" to="." method="_on_Tween_tween_completed"]
+[connection signal="body_entered" from="Jump" to="." method="_on_Jump_body_entered"]
+[connection signal="body_exited" from="Jump" to="." method="_on_Jump_body_exited"]
+
+[editable path="CameraHolder/Camera2D/CanvasLayer/Control/Inventory/Slots/InventoryPoint"]

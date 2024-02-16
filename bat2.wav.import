@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bat2.wav-0f41d75bb377e537edc09840508f5b66.sample"
+
+[deps]
+
+source_file="res://bat2.wav"
+dest_files=[ "res://.import/bat2.wav-0f41d75bb377e537edc09840508f5b66.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

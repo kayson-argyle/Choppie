@@ -1,0 +1,939 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Seed.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Bubble.gd" type="Script" id=2]
+[ext_resource path="res://Environment/Platforms/LargeFloatingGrassRock.png" type="Texture" id=3]
+[ext_resource path="res://Environment/Interactables/Bubble.png" type="Texture" id=4]
+[ext_resource path="res://Environment/Interactables/Doors/Arch.png" type="Texture" id=5]
+[ext_resource path="res://TeleportDoorVars.gd" type="Script" id=6]
+[ext_resource path="res://SkySquid.gd" type="Script" id=7]
+[ext_resource path="res://FloatingPlatform.gd" type="Script" id=8]
+[ext_resource path="res://Scripts/Seed.gd" type="Script" id=9]
+[ext_resource path="res://Environment/Nature/LargeBlueberryBush.png" type="Texture" id=10]
+[ext_resource path="res://Environment/Nature/SmallBlueberryBush.png" type="Texture" id=11]
+[ext_resource path="res://SkySquid.tscn" type="PackedScene" id=12]
+[ext_resource path="res://Bubble.tscn" type="PackedScene" id=13]
+[ext_resource path="res://FloatingPlatform.tscn" type="PackedScene" id=14]
+[ext_resource path="res://ShapeableLight.tscn" type="PackedScene" id=15]
+[ext_resource path="res://TeleportDoor.tscn" type="PackedScene" id=16]
+
+[sub_resource type="CanvasItemMaterial" id=2]
+blend_mode = 1
+
+[sub_resource type="StreamTexture" id=1]
+flags = 4
+load_path = "res://.import/light.png-9cb4b367c8c726830193cc7386cfe81c.stex"
+
+[node name="Bruh" type="Node2D"]
+
+[node name="FloatingPlatform5" type="Sprite" parent="." instance=ExtResource( 14 )]
+position = Vector2( 663, -320 )
+texture = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="ShapeableLight" type="Polygon2D" parent="FloatingPlatform5" instance=ExtResource( 15 )]
+material = SubResource( 2 )
+position = Vector2( -3.50003, -9 )
+scale = Vector2( 0.0402631, 0.03 )
+color = Color( 0, 0, 0, 0.796078 )
+offset = Vector2( 14, 50 )
+texture = SubResource( 1 )
+polygon = PoolVector2Array( -247.334, -216.666, 252.666, -183.333, 502, -226, 693.846, 83.333, 693.846, 150, -398.966, 150, -647.333, 250, -498.313, -83.333 )
+uv = PoolVector2Array( 282.889, 39.3334, 742.889, 31.3334, 990.889, 307.333, 998.889, 715.333, 758.889, 983.333, 266.889, 979.333, 26.8889, 699.333, 45.8889, 305.333 )
+
+[node name="SmallBlueberryBush" type="Sprite" parent="FloatingPlatform5"]
+texture = ExtResource( 11 )
+
+[node name="LargeBlueberryBush" type="Sprite" parent="FloatingPlatform5"]
+texture = ExtResource( 10 )
+
+[node name="FloatingPlatform9" type="Sprite" parent="." instance=ExtResource( 14 )]
+position = Vector2( 516, -400 )
+texture = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="ShapeableLight" type="Polygon2D" parent="FloatingPlatform9" instance=ExtResource( 15 )]
+material = SubResource( 2 )
+position = Vector2( -6, -8 )
+scale = Vector2( 0.023114, 0.03 )
+color = Color( 0, 0, 0, 0.796078 )
+offset = Vector2( 14, 50 )
+texture = SubResource( 1 )
+polygon = PoolVector2Array( -143.791, -100, 245.582, -100, 418.639, -33.333, 591.693, 33.334, 375.375, 116.666, -230.318, 83.333, -403.375, 50, -489.902, -50 )
+uv = PoolVector2Array( 282.889, 39.3334, 742.889, 31.3334, 990.889, 307.333, 998.889, 715.333, 758.889, 983.333, 266.889, 979.333, 26.8889, 699.333, 45.8889, 305.333 )
+
+[node name="SmallBlueberryBush" type="Sprite" parent="FloatingPlatform9"]
+position = Vector2( 9, 0.5 )
+texture = ExtResource( 11 )
+
+[node name="Bubble" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 548, -335 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble2" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 438, -336 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble3" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 438, -365 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble4" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 453, -382 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble5" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 468, -398 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble6" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 634, -446 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="SkySquid" type="RigidBody2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 532, -439 )
+z_index = 1
+collision_layer = 6
+collision_mask = 6
+mode = 2
+gravity_scale = 0.0
+linear_damp = 1.0
+script = ExtResource( 7 )
+deathSound = ""
+attackRange = 60
+fleeRange = 30
+absRange = 120
+
+[node name="SkySquid2" type="RigidBody2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 614, -463 )
+z_index = 1
+collision_layer = 6
+collision_mask = 6
+mode = 2
+gravity_scale = 0.0
+linear_damp = 1.0
+script = ExtResource( 7 )
+deathSound = ""
+attackRange = 60
+fleeRange = 30
+absRange = 120
+
+[node name="SkySquid3" type="RigidBody2D" parent="." instance=ExtResource( 12 )]
+position = Vector2( 621, -451 )
+z_index = 1
+collision_layer = 6
+collision_mask = 6
+mode = 2
+gravity_scale = 0.0
+linear_damp = 1.0
+script = ExtResource( 7 )
+deathSound = ""
+attackRange = 60
+fleeRange = 30
+absRange = 120
+
+[node name="FloatingPlatform10" type="Sprite" parent="." instance=ExtResource( 14 )]
+position = Vector2( 587, -427 )
+texture = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="ShapeableLight" type="Polygon2D" parent="FloatingPlatform10" instance=ExtResource( 15 )]
+material = SubResource( 2 )
+position = Vector2( 14, -7 )
+scale = Vector2( 0.023114, 0.03 )
+color = Color( 0, 0, 0, 0.796078 )
+offset = Vector2( 14, 50 )
+texture = SubResource( 1 )
+polygon = PoolVector2Array( -143.791, -100, 245.582, -100, 418.639, -33.333, 591.693, 33.334, 375.375, 116.666, -230.318, 83.333, -403.375, 50, -489.902, -50 )
+uv = PoolVector2Array( 282.889, 39.3334, 742.889, 31.3334, 990.889, 307.333, 998.889, 715.333, 758.889, 983.333, 266.889, 979.333, 26.8889, 699.333, 45.8889, 305.333 )
+
+[node name="SmallBlueberryBush" type="Sprite" parent="FloatingPlatform10"]
+position = Vector2( 4, 1 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 11 )
+
+[node name="FloatingPlatform11" type="Sprite" parent="." instance=ExtResource( 14 )]
+position = Vector2( 587, -427 )
+texture = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="ShapeableLight" type="Polygon2D" parent="FloatingPlatform11" instance=ExtResource( 15 )]
+material = SubResource( 2 )
+position = Vector2( 14, -7 )
+scale = Vector2( 0.023114, 0.03 )
+color = Color( 0, 0, 0, 0.796078 )
+offset = Vector2( 14, 50 )
+texture = SubResource( 1 )
+polygon = PoolVector2Array( -143.791, -100, 245.582, -100, 418.639, -33.333, 591.693, 33.334, 375.375, 116.666, -230.318, 83.333, -403.375, 50, -489.902, -50 )
+uv = PoolVector2Array( 282.889, 39.3334, 742.889, 31.3334, 990.889, 307.333, 998.889, 715.333, 758.889, 983.333, 266.889, 979.333, 26.8889, 699.333, 45.8889, 305.333 )
+
+[node name="SmallBlueberryBush" type="Sprite" parent="FloatingPlatform11"]
+position = Vector2( 4, 1 )
+scale = Vector2( -1, 1 )
+texture = ExtResource( 11 )
+
+[node name="Bubble7" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 651, -464 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble8" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 634, -479 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble9" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 616, -493 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="FloatingPlatform14" type="Sprite" parent="." instance=ExtResource( 14 )]
+position = Vector2( 688, -545 )
+texture = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="ShapeableLight" type="Polygon2D" parent="FloatingPlatform14" instance=ExtResource( 15 )]
+material = SubResource( 2 )
+position = Vector2( -3.50003, -9 )
+scale = Vector2( 0.0402631, 0.03 )
+color = Color( 0, 0, 0, 0.796078 )
+offset = Vector2( 14, 50 )
+texture = SubResource( 1 )
+polygon = PoolVector2Array( -247.334, -216.666, 252.666, -183.333, 502, -226, 693.846, 83.333, 693.846, 150, -398.966, 150, -647.333, 250, -498.313, -83.333 )
+uv = PoolVector2Array( 282.889, 39.3334, 742.889, 31.3334, 990.889, 307.333, 998.889, 715.333, 758.889, 983.333, 266.889, 979.333, 26.8889, 699.333, 45.8889, 305.333 )
+
+[node name="SmallBlueberryBush" type="Sprite" parent="FloatingPlatform14"]
+texture = ExtResource( 11 )
+
+[node name="LargeBlueberryBush" type="Sprite" parent="FloatingPlatform14"]
+texture = ExtResource( 10 )
+
+[node name="TeleportDoor" type="Sprite" parent="FloatingPlatform14" instance=ExtResource( 16 )]
+position = Vector2( -1, -12.5 )
+z_index = 1
+texture = ExtResource( 5 )
+offset = Vector2( -6, 9 )
+script = ExtResource( 6 )
+
+[node name="FloatingPlatform15" type="Sprite" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1214, -791 )
+texture = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="ShapeableLight" type="Polygon2D" parent="FloatingPlatform15" instance=ExtResource( 15 )]
+material = SubResource( 2 )
+position = Vector2( -15.4584, -10 )
+scale = Vector2( 0.0436184, 0.03 )
+color = Color( 0, 0, 0, 0.796078 )
+offset = Vector2( 14, 50 )
+texture = SubResource( 1 )
+polygon = PoolVector2Array( -232.752, -116.668, 252.666, -183.333, 495.15, -150, 569.66, 50, 495.15, 183.332, 147.438, 183.332, -200.275, 150, -324.457, 50 )
+uv = PoolVector2Array( 282.889, 39.3334, 742.889, 31.3334, 990.889, 307.333, 998.889, 715.333, 758.889, 983.333, 266.889, 979.333, 26.8889, 699.333, 45.8889, 305.333 )
+
+[node name="LargeBlueberryBush" type="Sprite" parent="FloatingPlatform15"]
+position = Vector2( -13, -0.5 )
+texture = ExtResource( 10 )
+
+[node name="FloatingPlatform16" type="Sprite" parent="." instance=ExtResource( 14 )]
+position = Vector2( 646, -848 )
+texture = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="Seed" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 627, -859 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed2" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 634, -859 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed3" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 642, -859 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed4" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 649, -859 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed5" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 656, -859 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed6" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 664, -859 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed7" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 630, -867 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed8" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 637, -867 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed9" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 644, -866 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed10" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 651, -866 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed11" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 641, -875 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="Seed12" type="RigidBody2D" parent="." instance=ExtResource( 1 )]
+position = Vector2( 648, -874 )
+script = ExtResource( 9 )
+type = "Watermelon"
+doTimer = false
+
+[node name="BubbleChains" type="Node2D" parent="."]
+position = Vector2( 688, -588 )
+
+[node name="Bubble10" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -1.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble11" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -17.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble13" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -33.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble14" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -49.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble15" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -65.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble16" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -81.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble17" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -97.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble18" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -113.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble12" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -129.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble20" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -145.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble21" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -161.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble22" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -177.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble23" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -193.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble24" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -209.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble25" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -225.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble26" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -241.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble27" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -0.5, -257.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble19" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -39.2423, -1.97815 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble28" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -48.0381, -15.3434 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble29" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -56.834, -28.7088 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble30" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -65.6299, -42.0742 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble31" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -74.4258, -55.4395 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble32" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -83.2217, -68.8048 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble33" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -92.0176, -82.1702 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble34" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -100.813, -95.5355 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble35" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -109.609, -108.901 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble36" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -118.405, -122.266 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble37" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -127.201, -135.632 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble38" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -135.997, -148.997 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble39" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -144.793, -162.362 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble40" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -153.589, -175.728 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble41" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -162.385, -189.093 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble42" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -171.181, -202.458 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble43" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( -179.976, -215.824 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble44" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 39.4064, -0.528015 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble45" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 48.1977, -13.8964 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble46" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 56.989, -27.2648 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble47" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 65.7802, -40.6332 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble48" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 74.5715, -54.0015 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble49" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 83.3627, -67.3699 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble50" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 92.154, -80.7383 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble51" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 100.945, -94.1067 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble52" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 109.737, -107.475 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble53" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 118.528, -120.844 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble54" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 127.319, -134.212 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble55" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 136.11, -147.58 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble56" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 144.902, -160.949 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble57" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 153.693, -174.317 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble58" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 162.484, -187.685 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble59" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 171.275, -201.054 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble60" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 180.067, -214.422 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble62" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 212, -214.929 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble63" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 228, -214.858 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble64" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 244, -214.786 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble65" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 259.999, -214.715 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble66" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 275.999, -214.644 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble67" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 291.999, -214.573 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble68" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 307.999, -214.502 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble69" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 323.999, -214.431 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble70" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 339.999, -214.359 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble61" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 196, -215 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble71" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 356.5, -214.429 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble72" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 372.5, -214.358 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble73" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 388.5, -214.286 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble74" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 404.499, -214.215 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble75" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 420.499, -214.144 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble76" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 436.499, -214.073 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble77" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 452.499, -214.002 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble78" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 468.499, -213.931 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble79" type="Sprite" parent="BubbleChains" instance=ExtResource( 13 )]
+position = Vector2( 484.499, -213.859 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble10" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1229, -657 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble11" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1262, -644 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble12" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1296, -628 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble13" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1332, -612 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="FloatingPlatform26" type="Sprite" parent="." instance=ExtResource( 14 )]
+position = Vector2( 1551, -532 )
+texture = ExtResource( 3 )
+script = ExtResource( 8 )
+
+[node name="ShapeableLight" type="Polygon2D" parent="FloatingPlatform26" instance=ExtResource( 15 )]
+material = SubResource( 2 )
+position = Vector2( -15.4584, -10 )
+scale = Vector2( 0.0436184, 0.03 )
+color = Color( 0, 0, 0, 0.796078 )
+offset = Vector2( 14, 50 )
+texture = SubResource( 1 )
+polygon = PoolVector2Array( -232.752, -116.668, 252.666, -183.333, 495.15, -150, 569.66, 50, 495.15, 183.332, 147.438, 183.332, -200.275, 150, -324.457, 50 )
+uv = PoolVector2Array( 282.889, 39.3334, 742.889, 31.3334, 990.889, 307.333, 998.889, 715.333, 758.889, 983.333, 266.889, 979.333, 26.8889, 699.333, 45.8889, 305.333 )
+
+[node name="LargeBlueberryBush" type="Sprite" parent="FloatingPlatform26"]
+position = Vector2( -13, -0.5 )
+texture = ExtResource( 10 )
+
+[node name="Bubble14" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1411, -580 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble15" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1917.5, -532.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble16" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1872.5, -532.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble18" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1827.5, -532.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble19" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1782.5, -532.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble20" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1737.5, -532.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble21" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1692.5, -532.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble22" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1647.5, -532.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2
+
+[node name="Bubble23" type="Sprite" parent="." instance=ExtResource( 13 )]
+position = Vector2( 1602.5, -532.5 )
+texture = ExtResource( 4 )
+script = ExtResource( 2 )
+sinPos = Vector2( 0, -0.0627886 )
+regrowTime = 2

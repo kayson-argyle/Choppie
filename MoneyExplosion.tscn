@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Money.tscn" type="PackedScene" id=1]
+[ext_resource path="res://MoneyExplosion.gd" type="Script" id=2]
+
+[node name="MoneyExplosion" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Money" parent="." instance=ExtResource( 1 )]
+mode = 1
+
+[node name="Sprite" parent="Money" index="0"]
+visible = false
+
+[node name="CollisionShape2D" parent="Money" index="1"]
+disabled = true
+
+[node name="CollisionShape2D2" parent="Money/Area2D" index="0"]
+disabled = true
+
+[editable path="Money"]

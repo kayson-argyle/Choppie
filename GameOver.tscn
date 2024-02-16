@@ -1,0 +1,79 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Scripts/GameOver.gd" type="Script" id=2]
+[ext_resource path="res://Environment/Backgrounds/Black.png" type="Texture" id=3]
+[ext_resource path="res://libel-suit-rg.ttf" type="DynamicFontData" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 300
+use_filter = true
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0235294, 0, 0.0588235, 1 )
+anti_aliasing_size = 5.0
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+use_filter = true
+font_data = ExtResource( 4 )
+
+[node name="GameOver" type="Node2D"]
+pause_mode = 2
+modulate = Color( 1, 1, 1, 0 )
+script = ExtResource( 2 )
+
+[node name="Black" type="Sprite" parent="."]
+position = Vector2( 82, 45 )
+scale = Vector2( 200, 100 )
+texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+margin_left = 38.0
+margin_top = 13.0
+margin_right = 861.0
+margin_bottom = 374.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = SubResource( 1 )
+text = "YOU DIED"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": true
+}
+
+[node name="Button" type="Button" parent="Label"]
+modulate = Color( 1, 1, 1, 0 )
+self_modulate = Color( 1, 1, 1, 0 )
+margin_left = 100.0
+margin_top = 450.0
+margin_right = 162.0
+margin_bottom = 470.0
+rect_scale = Vector2( 10, 10 )
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="Label/Button"]
+margin_left = 17.0
+margin_top = 4.0
+margin_right = 299.0
+margin_bottom = 125.0
+rect_scale = Vector2( 0.1, 0.1 )
+custom_fonts/font = SubResource( 2 )
+text = "Continue"
+align = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="pressed" from="Label/Button" to="." method="_on_Button_pressed"]

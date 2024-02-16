@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/tornadoWhoosh.ogg-8161f91f3ecea3fc43dd04b0b5cf92bb.oggstr"
+
+[deps]
+
+source_file="res://tornadoWhoosh.ogg"
+dest_files=[ "res://.import/tornadoWhoosh.ogg-8161f91f3ecea3fc43dd04b0b5cf92bb.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

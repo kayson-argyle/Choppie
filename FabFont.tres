@@ -1,0 +1,8 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://libel-suit-rg.ttf" type="DynamicFontData" id=1]
+
+[resource]
+size = 75
+outline_color = Color( 0.0901961, 0.0509804, 0, 0.898039 )
+font_data = ExtResource( 1 )

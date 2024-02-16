@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/fragonDeath.ogg-4819f5c3a0ec5a5c17090442ab2820e8.oggstr"
+
+[deps]
+
+source_file="res://fragonDeath.ogg"
+dest_files=[ "res://.import/fragonDeath.ogg-4819f5c3a0ec5a5c17090442ab2820e8.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

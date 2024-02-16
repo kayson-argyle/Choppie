@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/treeHit.wav-8cde94ea8cd31558ea5ceb25d84f90a0.sample"
+
+[deps]
+
+source_file="res://treeHit.wav"
+dest_files=[ "res://.import/treeHit.wav-8cde94ea8cd31558ea5ceb25d84f90a0.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

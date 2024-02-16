@@ -1,0 +1,124 @@
+{
+  "None": {
+    "ItemType": null,
+    "Speed": null,
+    "File": null,
+    "Limit": null,
+    "StackSize": null,
+    "Texture": null,
+    "Damage": null
+  },
+  "Acorn": {
+    "ItemType": "Throw",
+    "Speed": 200,
+    "File": "res://Acorn.tscn",
+    "Limit": 50,
+    "StackSize": 10,
+    "Texture": "res://Items/Acorn.png",
+    "Damage": 10
+  },
+  "Pinecone": {
+    "ItemType": "Throw",
+    "Speed": 195,
+    "File": "res://Pinecone.tscn",
+    "Limit": 25,
+    "StackSize": 5,
+    "Texture": "res://Items/Pinecone.png",
+    "Damage": 0
+  },
+  "Orange": {
+    "ItemType": "Throw",
+    "Speed": 220,
+    "File": "res://Orange.tscn",
+    "Limit": 50,
+    "StackSize": 5,
+    "Texture": "res://Items/Orange.png",
+    "Damage": 9
+  },
+  "Apple": {
+    "ItemType": "Eat",
+    "File": "res://Apple.tscn",
+    "Limit": 10,
+    "StackSize": 0,
+    "Texture": "res://Items/Apple.png"
+  },
+  "Watermelon": {
+    "ItemType": "Throw",
+    "Speed": 160,
+    "File": "res://Watermelon.tscn",
+    "Limit": 10,
+    "StackSize": 5,
+    "Texture": "res://Items/Watermelon.png",
+    "Damage": 20
+  },
+  "Mango": {
+    "ItemType": "Throw",
+    "Speed": 200,
+    "File": "res://Mango.tscn",
+    "Limit": 50,
+    "StackSize": 5,
+    "Texture": "res://Items/Mango.png",
+    "Damage": 6
+  },
+  "Nuke": {
+    "ItemType": "Throw",
+    "Speed": 100,
+    "File": "res://Nuke.tscn",
+    "Limit": 2,
+    "StackSize": 1,
+    "Texture": "res://Items/Nuke.png",
+    "Damage": 200
+  },
+  "Bat Wing": {
+    "ItemType": "Throw",
+    "Speed": 175,
+    "File": "res://BatWing.tscn",
+    "Limit": 35,
+    "StackSize": 0,
+    "Texture": "res://Items/BatWing.png",
+    "Damage": 10
+  },
+  "Cherry": {
+    "ItemType": "Throw",
+    "Speed": 160,
+    "File": "res://Cherry.tscn",
+    "Limit": 8,
+    "StackSize": 0,
+    "Texture": "res://Items/Cherry.png",
+    "Damage": 15
+  },
+  "Squid Egg": {
+    "ItemType": "Throw",
+    "Speed": 175,
+    "File": "res://SquidEgg.tscn",
+    "Limit": 5,
+    "StackSize": 0,
+    "Texture": "res://Items/SquidEgg.png",
+    "Damage": 0
+  },
+  "Beetler Shell": {
+    "ItemType": "Eat",
+    "File": "res://BeetlerShell.tscn",
+    "Limit": 10,
+    "StackSize": 0,
+    "Texture": "res://Items/BeetlerShell.png"
+  },
+"Rune Rock": {
+    "ItemType": "Throw",
+    "Speed": 200,
+    "File": "res://Rune Rock.tscn",
+    "Limit": 20,
+    "StackSize": 10,
+    "Texture": "res://Items/RuneRock.png",
+    "Damage": 10
+  },
+"Stick": {
+    "ItemType": "Throw",
+    "Speed": 200,
+    "File": "res://Stick.tscn",
+    "Limit": 30,
+    "StackSize": 10,
+    "Texture": "res://Items/Stick.png",
+    "Damage": 8
+  }
+}

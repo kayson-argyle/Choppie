@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Environment/Platforms/LargeFloatingGrassRock.png" type="Texture" id=1]
+[ext_resource path="res://FloatingPlatform.gd" type="Script" id=2]
+
+[node name="FloatingPlatform" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Body" type="KinematicBody2D" parent="."]
+collision_layer = 7
+collision_mask = 4
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Body"]
+polygon = PoolVector2Array( -30, -6, 32, -6, 26, 7, 19, 3, 6, 18, 2, 12, -4, 22, -19, 1, -23, 6 )
+
+[node name="Area2D" type="Area2D" parent="."]
+visible = false
+
+[node name="Collision" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( -30, -6, 32, -6, 26, 7, 19, 3, 6, 18, 2, 12, -4, 22, -19, 1, -23, 6 )
+[connection signal="area_entered" from="Area2D" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_exited" from="Area2D" to="." method="_on_Area2D_area_exited"]
